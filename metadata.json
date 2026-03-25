@@ -1,0 +1,7 @@
+{
+  "name": "EASTECO Empowerment 2026",
+  "description": "The official portal for the EASTECO Strengthening Women and Youth Innovation and Entrepreneurship Project 2026, serving the East African Community region.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
