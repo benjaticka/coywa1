@@ -1,0 +1,87 @@
+# GitHub Actions Workflow for deploying a Vite React app to GitHub Pages
+name: Deploy to GitHub Pages
+
+# Expand CI control: Trigger on pushes to main and develop
+on:
+  push:
+    branches: 
+      - main
+      - develop
+  # Allow manual triggering from the Actions tab
+  workflow_dispatch:
+
+# Set fallback environment variables to prevent accidental build errors
+env:
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || '' }}
+
+# Enhance security: Limit permissions to only what is strictly required
+permissions:
+  contents: read
+  pages: write
+  id-token: write # Note: id-token is strictly required by actions/deploy-pages@v4 for OIDC auth
+
+# Prevent concurrent deployments from overlapping
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Speed up workflow runs by caching dependencies
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      # Test Build Outputs (Commented out until `npm test` is added to package.json)
+      # - name: Test Build Artifacts
+      #   run: npm test
+
+      - name: Build project
+        run: npm run build
+
+      # Specify dist folder explicitly using github.workspace
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}/dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    # Optional: Only deploy to production if pushing to the main branch
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # Notifications for Deploy Failures
+      - name: Notify on failure
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: "🚨 GitHub Pages Deploy Failed for ${{ github.repository }}!"
