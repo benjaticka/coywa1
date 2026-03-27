@@ -12,7 +12,7 @@ const COLORS = ['#2563eb', '#10b981'];
 
 const ImpactStats: React.FC = () => {
   return (
-    <section id="impact" className="py-24 bg-white">
+    <section id="impact" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           badge="Direct Impact" 
@@ -23,7 +23,7 @@ const ImpactStats: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="grid grid-cols-2 gap-6">
             {STATS.map((stat, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col items-start gap-2 group hover:bg-blue-600 transition-all duration-300">
+              <div key={i} className="p-8 rounded-3xl bg-white/60 backdrop-blur-sm border border-white/50 flex flex-col items-start gap-2 group hover:bg-blue-600 transition-all duration-300">
                 <span className="text-4xl font-extrabold text-blue-600 group-hover:text-white transition-colors">{stat.value}</span>
                 <span className="font-bold text-slate-800 group-hover:text-white transition-colors">{stat.label}</span>
                 <p className="text-sm text-slate-500 group-hover:text-blue-100 transition-colors leading-tight">{stat.description}</p>
@@ -31,7 +31,7 @@ const ImpactStats: React.FC = () => {
             ))}
           </div>
 
-          <div className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 flex flex-col items-center">
+          <div className="p-8 rounded-[2rem] bg-white/60 backdrop-blur-sm border border-white/50 flex flex-col items-center">
             <h4 className="text-xl font-bold text-slate-800 mb-8">Primary Target Distribution</h4>
             {/* Added min-h and min-w to resolve ResponsiveContainer dimension calculation issues */}
             <div className="h-64 w-full min-h-[256px] min-w-0">

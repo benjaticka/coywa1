@@ -11,15 +11,15 @@ import { PARTNERS } from './constants';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <Navbar />
       
       <main>
         <Hero />
         
-        <section id="overview" className="py-24 bg-slate-50 border-y border-slate-100">
+        <section id="overview" className="py-24 bg-white/40 backdrop-blur-md border-y border-white/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white p-8 md:p-16 rounded-[3.5rem] shadow-2xl shadow-slate-200/50 border border-white relative overflow-hidden group">
+            <div className="bg-white/80 backdrop-blur-md p-8 md:p-16 rounded-[3.5rem] shadow-2xl shadow-slate-200/50 border border-white/50 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl opacity-50 group-hover:bg-blue-100 transition-colors duration-700"></div>
               
               <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -37,15 +37,15 @@ const App: React.FC = () => {
                   </p>
                   
                   <div className="pt-10 flex flex-wrap justify-center gap-6">
-                    <div className="px-8 py-3 bg-white text-slate-700 rounded-2xl font-bold border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all flex items-center gap-3">
+                    <div className="px-8 py-3 bg-white/80 backdrop-blur-sm text-slate-700 rounded-2xl font-bold border border-white/50 shadow-sm hover:border-blue-200 hover:shadow-md transition-all flex items-center gap-3">
                       <span className="w-2 h-2 rounded-full bg-blue-600"></span>
                       8 Partner States
                     </div>
-                    <div className="px-8 py-3 bg-white text-slate-700 rounded-2xl font-bold border border-slate-100 shadow-sm hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-3">
+                    <div className="px-8 py-3 bg-white/80 backdrop-blur-sm text-slate-700 rounded-2xl font-bold border border-white/50 shadow-sm hover:border-emerald-200 hover:shadow-md transition-all flex items-center gap-3">
                       <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                       1,600+ Entrepreneurs
                     </div>
-                    <div className="px-8 py-3 bg-white text-slate-700 rounded-2xl font-bold border border-slate-100 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex items-center gap-3">
+                    <div className="px-8 py-3 bg-white/80 backdrop-blur-sm text-slate-700 rounded-2xl font-bold border border-white/50 shadow-sm hover:border-amber-200 hover:shadow-md transition-all flex items-center gap-3">
                       <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                       Kigali & Kampala Hubs
                     </div>
@@ -64,7 +64,7 @@ const App: React.FC = () => {
 
         <AIAssistant />
         
-        <section id="sustainability" className="py-24 bg-white overflow-hidden">
+        <section id="sustainability" className="py-24 bg-transparent overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div>
@@ -82,7 +82,7 @@ const App: React.FC = () => {
                     'EAC Youth Alliance',
                     'Alumni mentorship'
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-white transition-all group">
+                    <div key={i} className="flex items-center gap-3 p-5 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/50 hover:border-blue-200 hover:bg-white/80 transition-all group">
                       <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                       </div>
@@ -99,7 +99,7 @@ const App: React.FC = () => {
                   alt="African entrepreneur with confident smile" 
                   className="rounded-[4rem] shadow-2xl relative z-10 w-full h-[550px] object-cover"
                 />
-                <div className="absolute -bottom-8 -left-8 p-10 bg-white rounded-3xl shadow-2xl border border-slate-100 max-w-xs z-20">
+                <div className="absolute -bottom-8 -left-8 p-10 bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl border border-white/50 max-w-xs z-20">
                   <div className="w-14 h-14 bg-blue-600 rounded-2xl mb-6 flex items-center justify-center text-white shadow-lg shadow-blue-200">
                     <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                   </div>
@@ -111,7 +111,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section id="partners" className="py-24 bg-slate-50 border-t border-slate-100">
+        <section id="partners" className="py-24 bg-white/40 backdrop-blur-md border-t border-white/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <span className="text-blue-600 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">The Network</span>
@@ -121,7 +121,7 @@ const App: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-24">
                {PARTNERS.map((partner) => (
-                 <div key={partner.name} className="flex flex-col items-center justify-center p-8 bg-white rounded-3xl border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group">
+                 <div key={partner.name} className="flex flex-col items-center justify-center p-8 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group">
                     <div className="h-20 w-full flex items-center justify-center mb-6">
                       <img 
                         src={partner.logo} 

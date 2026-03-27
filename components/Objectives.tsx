@@ -35,7 +35,7 @@ const Objectives: React.FC = () => {
   ];
 
   return (
-    <section id="objectives" className="py-24 bg-white">
+    <section id="objectives" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           badge="Our Mission" 
@@ -45,8 +45,8 @@ const Objectives: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {objectiveList.map((obj, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-white p-4 rounded-2xl w-fit mb-6 shadow-sm border border-slate-100">
+            <div key={i} className="p-8 rounded-3xl bg-white/60 backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white/80 p-4 rounded-2xl w-fit mb-6 shadow-sm border border-white/50">
                 {obj.icon}
               </div>
               <h3 className="text-2xl font-bold text-slate-800 mb-4">{obj.title}</h3>

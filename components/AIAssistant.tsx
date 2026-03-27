@@ -53,7 +53,7 @@ const AIAssistant: React.FC = () => {
 
       <div
         id="ai-advisor"
-        className={`fixed bottom-28 right-8 z-[60] w-[90vw] md:w-[450px] max-h-[70vh] flex flex-col bg-white rounded-3xl shadow-2xl border border-gray-100 transition-all duration-300 transform origin-bottom-right ${
+        className={`fixed bottom-28 right-8 z-[60] w-[90vw] md:w-[450px] max-h-[70vh] flex flex-col bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 transition-all duration-300 transform origin-bottom-right ${
           isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'
         }`}
       >
@@ -127,7 +127,7 @@ const AIAssistant: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask for advice or project details..."
-              className="w-full py-4 pl-4 pr-14 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all text-slate-700"
+              className="w-full py-4 pl-4 pr-14 bg-white/50 border border-white/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white/80 transition-all text-slate-700"
             />
             <button
               onClick={handleSend}
@@ -143,7 +143,7 @@ const AIAssistant: React.FC = () => {
         </div>
       </div>
       
-      <section className="py-24 bg-slate-900 overflow-hidden relative">
+      <section className="py-24 bg-slate-900/80 backdrop-blur-md overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/40 via-transparent to-transparent opacity-50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">

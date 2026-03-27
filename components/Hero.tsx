@@ -4,8 +4,8 @@ import { ArrowRight, Sparkles, Lightbulb, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-slate-50 skew-x-[-12deg] translate-x-1/4 -z-0 hidden lg:block opacity-70"></div>
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-transparent">
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-white/30 backdrop-blur-sm skew-x-[-12deg] translate-x-1/4 -z-0 hidden lg:block opacity-70"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
                 Our Objectives
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#overview" className="w-full sm:w-auto px-10 py-5 bg-white border border-gray-200 hover:border-blue-600 text-slate-700 hover:text-blue-600 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+              <a href="#overview" className="w-full sm:w-auto px-10 py-5 bg-white/80 backdrop-blur-sm border border-white/50 hover:border-blue-600 text-slate-700 hover:text-blue-600 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2">
                 Project Overview
               </a>
             </div>
@@ -60,14 +60,14 @@ const Hero: React.FC = () => {
                 />
               </div>
 
-              <div className="absolute -top-8 -left-8 bg-white p-6 rounded-3xl shadow-2xl border border-slate-50 flex flex-col items-center gap-2 animate-bounce-slow">
+              <div className="absolute -top-8 -left-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-white/50 flex flex-col items-center gap-2 animate-bounce-slow">
                 <div className="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center">
                   <Lightbulb size={28} />
                 </div>
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Innovation</span>
               </div>
 
-              <div className="absolute -bottom-8 right-12 bg-white px-8 py-6 rounded-[2rem] shadow-2xl border border-slate-50 flex items-center gap-5">
+              <div className="absolute -bottom-8 right-12 bg-white/90 backdrop-blur-md px-8 py-6 rounded-[2rem] shadow-2xl border border-white/50 flex items-center gap-5">
                 <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200">
                   <Zap size={24} fill="currentColor" />
                 </div>

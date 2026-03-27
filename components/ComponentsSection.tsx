@@ -15,7 +15,7 @@ const ComponentsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="components" className="py-24 bg-slate-50 overflow-hidden">
+    <section id="components" className="py-24 bg-white/40 backdrop-blur-md border-y border-white/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           badge="The Roadmap" 
@@ -33,8 +33,8 @@ const ComponentsSection: React.FC = () => {
                   onClick={() => setActiveTab(idx)}
                   className={`w-full flex items-center gap-4 p-5 rounded-2xl text-left transition-all duration-200 border ${
                     activeTab === idx 
-                    ? 'bg-white border-blue-600 shadow-lg text-blue-600' 
-                    : 'bg-white/50 border-gray-100 text-slate-600 hover:bg-white'
+                    ? 'bg-white/90 backdrop-blur-sm border-blue-600 shadow-lg text-blue-600' 
+                    : 'bg-white/40 backdrop-blur-sm border-white/50 text-slate-600 hover:bg-white/70'
                   }`}
                 >
                   <div className={`p-3 rounded-xl ${activeTab === idx ? 'bg-blue-600 text-white' : 'bg-gray-100'}`}>
@@ -50,7 +50,7 @@ const ComponentsSection: React.FC = () => {
             })}
           </div>
 
-          <div className="lg:col-span-8 bg-white overflow-hidden rounded-[2rem] shadow-xl border border-gray-100 flex flex-col">
+          <div className="lg:col-span-8 bg-white/80 backdrop-blur-md overflow-hidden rounded-[2rem] shadow-xl border border-white/50 flex flex-col">
             {COMPONENTS[activeTab].imageUrl && (
               <div className="h-48 md:h-64 overflow-hidden relative">
                 <img 
